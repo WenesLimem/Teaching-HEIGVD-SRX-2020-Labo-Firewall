@@ -592,8 +592,10 @@ ssh root@192.168.200.3 (password : celui que vous avez configuré)
 
 ---
 
-**LIVRABLE : capture d'écran de votre connexion ssh.**
-    (I HAVE IT W )
+**Captures d'écran de connexion ssh.**
+    ![](Screens/SSH_firewall.PNG)
+    ![](Screens/SSH.PNG	)
+    
 ---
 
 <ol type="a" start="9">
