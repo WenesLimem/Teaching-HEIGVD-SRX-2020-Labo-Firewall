@@ -434,20 +434,20 @@ Faire une capture du ping.
 </ol>
 
 
-| De Client\_in\_LAN à | OK/KO | Commentaires et explications |
-| :---                 | :---: | :---                         |
-| Interface DMZ du FW  |       |                 KO           |
-| Interface LAN du FW  |       |                 KO           |
-| Client LAN           |       |                 OK           |
-| Serveur WAN          |       |                 OK           |
+| De Client\_in\_LAN à | OK/KO | Commentaires et explications            |
+| :---                 | :---: | :---                                    |
+| Interface DMZ du FW  |    KO | Input policy est drop                   |
+| Interface LAN du FW  |    KO | Input policy est drop                   |
+| Client LAN           |    OK | Equivalent à pinger loopback-address    |
+| Serveur WAN          |    OK | Forward est accept entre eth1 et eth0   |
 
 
-| De Server\_in\_DMZ à | OK/KO | Commentaires et explications |
-| :---                 | :---: | :---                         |
-| Interface DMZ du FW  |       |                 KO           |
-| Interface LAN du FW  |       |                 KO           |
-| Serveur DMZ          |       |                 OK           |
-| Serveur WAN          |       |                 KO           |
+| De Server\_in\_DMZ à | OK/KO | Commentaires et explications            |
+| :---                 | :---: | :---                                    |
+| Interface DMZ du FW  |   KO  | Input policy est drop                   |
+| Interface LAN du FW  |   KO  | Input policy est drop                   |
+| Serveur DMZ          |   OK  | Equivalent à pinger loopback-address    |
+| Serveur WAN          |   KO  | Input policy est drop                   |
 
 
 ## Règles pour le protocole DNS
