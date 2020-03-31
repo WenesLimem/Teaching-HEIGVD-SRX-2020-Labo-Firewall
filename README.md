@@ -461,12 +461,12 @@ Faire une capture du ping.
 ping www.google.com
 ```
 
-* Faire une capture du ping. (I HAVE IT W )
+
 
 ---
 
-**LIVRABLE : capture d'écran de votre ping.**
-
+**Capture d'écran de votre ping.**
+![](Screens/SRX_Capture_ping5.png)
 ---
 
 * Créer et appliquer la règle adéquate pour que la **condition 1 du cahier des charges** soit respectée.
