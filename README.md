@@ -532,7 +532,7 @@ root@Firewall:/# iptables -A FORWARD -o eth1 -p tcp --sport 80 -j ACCEPT
 root@Firewall:/# iptables -A FORWARD -i eth1 -p tcp --dport 443 -j ACCEPT
 root@Firewall:/# iptables -A FORWARD -o eth1 -p tcp --sport 443 -j ACCEPT
 ```
-
+![](Screens/https.PNG)
 ---
 
 * Créer et appliquer les règles adéquates avec des commandes iptables pour que la **condition 5 du cahier des charges** soit respectée.
@@ -542,10 +542,11 @@ Commandes iptables :
 ---
 
 ```bash
-root@Firewall:/# iptables -A FORWARD -i eth1 -o eth0 -s 192.168.100.0/24 -p tcp --dport 443 -j ACCEPT
-root@Firewall:/# iptables -A FORWARD -i eth0 -o eth1 -p tcp --sport 443 -j ACCEPT
+root@Firewall:/# iptables -A FORWARD -i eth2 -p tcp --dport 80 -j ACCEPT
+root@Firewall:/# iptables -A FORWARD -o eth2 -p tcp --sport 80 -j ACCEPT
 
 ```
+![](Screens/https2.PNG)
 ---
 
 <ol type="a" start="7">
