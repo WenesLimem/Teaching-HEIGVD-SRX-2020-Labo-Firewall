@@ -619,7 +619,7 @@ ssh root@192.168.200.3 (password : celui que vous avez configuré)
 ---
 **Réponse**
 
-**Les networks sources**
+**Ce type de connexion est critique (SSH), il faut donc faire attention aux connexions entrantes (INPUT); Accetper la connexion depuis une seule machine dans notre cas, parait une bonne solution.**
 
 ---
 
