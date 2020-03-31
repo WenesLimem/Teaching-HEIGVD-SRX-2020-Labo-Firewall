@@ -504,7 +504,7 @@ root@Firewall:/# iptables -A FORWARD -i eth0 -o eth1  -p udp --sport 53 -j ACCEP
 ---
 **Réponse**
 
-**LIVRABLE : Votre réponse ici...**
+**Le premier ping ne marche pas car les requetes DNS sont DROPPED**
 
 ---
 
