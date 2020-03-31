@@ -594,7 +594,7 @@ ssh root@192.168.200.3 (password : celui que vous avez configuré)
 
 **Captures d'écran de connexion ssh.**
     ![](Screens/SSH_firewall.PNG)
-    ![](Screens/SSH.PNG	)
+    ![](Screens/SSH.PNG)
     
 ---
 
@@ -627,12 +627,7 @@ ssh root@192.168.200.3 (password : celui que vous avez configuré)
 
 A présent, vous devriez avoir le matériel nécessaire afin de reproduire la table de filtrage que vous avez conçue au début de ce laboratoire.
 
-<ol type="a" start="10">
-  <li>Insérer la capture d’écran avec toutes vos règles iptables
-  </li>                                  
-</ol>
-
 ---
-  I HAVE IT 
+![](Screens/iptable_final.PNG)
 
 ---
