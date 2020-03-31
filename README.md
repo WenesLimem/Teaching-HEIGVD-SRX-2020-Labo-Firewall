@@ -524,11 +524,13 @@ Commandes iptables :
 ---
 
 ```bash
-root@Firewall:/# iptables -A FORWARD -i eth1 -o eth0 -s 192.168.100.0/24 -p tcp --dport 80 -j ACCEPT
-root@Firewall:/# iptables -A FORWARD -i eth1 -o eth0 -s 192.168.100.0/24 -p tcp --dport 8080 -j ACCEPT
-root@Firewall:/# iptables -A FORWARD -i eth0 -o eth1  -p tcp --sport 8080 -j ACCEPT
-root@Firewall:/# iptables -A FORWARD -i eth0 -o eth1  -p tcp --sport 80 -j ACCEPT
+root@Firewall:/# iptables -A FORWARD -i eth1 -p tcp --dport 80 -j ACCEPT
+root@Firewall:/# iptables -A FORWARD -i eth1 -p tcp --dport 8080 -j ACCEPT
+root@Firewall:/# iptables -A FORWARD -o eth1 -p tcp --sport 8080 -j ACCEPT
+root@Firewall:/# iptables -A FORWARD -o eth1 -p tcp --sport 80 -j ACCEPT
 
+root@Firewall:/# iptables -A FORWARD -i eth1 -p tcp --dport 443 -j ACCEPT
+root@Firewall:/# iptables -A FORWARD -o eth1 -p tcp --sport 443 -j ACCEPT
 ```
 
 ---
