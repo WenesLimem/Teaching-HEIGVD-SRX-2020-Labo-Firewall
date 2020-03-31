@@ -573,11 +573,12 @@ Commandes iptables :
 ---
 
 ```bash
-root@Firewall:/# iptables -A FORWARD -i eth1 -o eth2 -s 192.168.100.0/24 -d 192.168.200.0/24 -p tcp --dport 22 -j ACCEPT
-root@Firewall:/# iptables -A FORWARD -i eth2 -o eth1 -s 192.168.200.0/24 -d 192.168.100.0/24 -p tcp --sport 22 -j ACCEPT
-root@Firewall:/# iptables -A INPUT -i eth1 -s 192.168.100.0/24 -p tcp --dport 22 -j ACCEPT
-root@Firewall:/# iptables -A OUTPUT -o eth1 -d 192.168.100.0/24 -p tcp --sport 22 -j ACCEPT
-root@Firewall:/#
+root@Firewall:/# iptables -A FORWARD -i eth1 -o eth2 -s 192.168.100.3 -d 192.168.200.3 -p tcp --dport 22 -j ACCEPT
+root@Firewall:/# iptables -A FORWARD -i eth2 -o eth1 -s 192.168.200.3 -d 192.168.100.3 -p tcp --sport 22 -j ACCEPT
+
+root@Firewall:/# iptables -A INPUT -i eth1 -s 192.168.100.3 -p tcp --dport 22 -j ACCEPT
+root@Firewall:/# iptables -A OUTPUT -o eth1 -d 192.168.100.3 -p tcp --sport 22 -j ACCEPT
+
 
 ```
 
