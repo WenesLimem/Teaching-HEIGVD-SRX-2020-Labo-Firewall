@@ -447,7 +447,7 @@ Faire une capture du ping.
 | Interface DMZ du FW  |   KO  | Input policy est drop                   |
 | Interface LAN du FW  |   KO  | Input policy est drop                   |
 | Serveur DMZ          |   OK  | Equivalent à pinger loopback-address    |
-| Serveur WAN          |   KO  | Input policy est drop                   |
+| Serveur WAN          |   KO  | Forward est drop pour eth2              |
 
 
 ## Règles pour le protocole DNS
