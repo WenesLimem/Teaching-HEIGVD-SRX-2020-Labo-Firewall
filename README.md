@@ -493,7 +493,7 @@ root@Firewall:/# iptables -A FORWARD -i eth0 -o eth1  -p udp --sport 53 -j ACCEP
 ---
 
 **LIVRABLE : capture d'écran de votre ping.**
-![](captures/google.jpg)
+![](Screens/google.jpg)
 ---
 
 <ol type="a" start="6">
