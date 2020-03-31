@@ -434,20 +434,20 @@ Faire une capture du ping.
 </ol>
 
 
-| De Client\_in\_LAN à | OK/KO | Commentaires et explications            |
-| :---                 | :---: | :---                                    |
-| Interface DMZ du FW  |    KO | Input policy est drop                   |
-| Interface LAN du FW  |    KO | Input policy est drop                   |
-| Client LAN           |    OK | Equivalent à pinger loopback-address    |
-| Serveur WAN          |    OK | Forward est accept entre eth1 et eth0   |
+| De Client\_in\_LAN à | OK/KO | Commentaires et explications             |
+| :---                 | :---: | :---                                     |
+| Interface DMZ du FW  |    KO | La politique de "Input" refuse le paquet |
+| Interface LAN du FW  |    KO | La politique de "Input" refuse le paquet |
+| Client LAN           |    OK | Equivalent à pinger loopback-address     |
+| Serveur WAN          |    OK | La regle "FORWARD" est déjà configurée   |
 
 
-| De Server\_in\_DMZ à | OK/KO | Commentaires et explications            |
-| :---                 | :---: | :---                                    |
-| Interface DMZ du FW  |   KO  | Input policy est drop                   |
-| Interface LAN du FW  |   KO  | Input policy est drop                   |
-| Serveur DMZ          |   OK  | Equivalent à pinger loopback-address    |
-| Serveur WAN          |   KO  | Forward est drop pour eth2              |
+| De Server\_in\_DMZ à | OK/KO | Commentaires et explications             |
+| :---                 | :---: | :---                                     |
+| Interface DMZ du FW  |   KO  | La politique de "Input" refuse le paquet |
+| Interface LAN du FW  |   KO  | La politique de "Input" refuse le paquet |
+| Serveur DMZ          |   OK  | Equivalent à pinger loopback-address     |
+| Serveur WAN          |   KO  |La politique de "FORWARD" refuse le paquet|
 
 
 ## Règles pour le protocole DNS
@@ -631,3 +631,5 @@ A présent, vous devriez avoir le matériel nécessaire afin de reproduire la ta
 ![](Screens/iptable_final.PNG)
 
 ---
+
+Remarque: Nous avons préferé d'utiliser les interfaces au lieux des plages d'adresses afin de maintenir une configuration de firewall adaptable aux diffèrentes futurs changements d'adresses.
