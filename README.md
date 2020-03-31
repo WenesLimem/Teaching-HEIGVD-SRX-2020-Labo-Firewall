@@ -476,13 +476,10 @@ Commandes iptables :
 ---
 
 ```bash
-root@Firewall:/# iptables -A FORWARD -i eth1 -o eth0 -s 192.168.100.0/24 -p icmp --icmp-type 8 -j ACCEPT
-root@Firewall:/# iptables -A FORWARD -i eth1 -o eth2 -s 192.168.100.0/24 -d 192.168.200.0/24 -p icmp --icmp-type 8 -j ACCEPT
-root@Firewall:/# iptables -A FORWARD -i eth2 -o eth1 -s 192.168.200.0/24 -p icmp --icmp-type 8 -j ACCEPT
-root@Firewall:/# iptables -A FORWARD -i eth0 -o eth1 -p icmp --icmp-type 0 -j ACCEPT
-
-root@Firewall:/# iptables -A FORWARD -i eth2 -o eth1 -s 192.168.200.0/24 -d 192.168.100.0/24 -p icmp --icmp-type 0 -j ACCEPT
-root@Firewall:/# iptables -A FORWARD -i eth1 -o eth2 -p icmp --icmp-type 0 -j ACCEPT
+root@Firewall:/# iptables -A FORWARD -i eth1 -o eth0  -p tcp --dport 53 -j ACCEPT
+root@Firewall:/# iptables -A FORWARD -i eth1 -o eth0 -p udp --dport 53 -j ACCEPT
+root@Firewall:/# iptables -A FORWARD -i eth0 -o eth1  -p tcp --sport 53 -j ACCEPT
+root@Firewall:/# iptables -A FORWARD -i eth0 -o eth1  -p udp --sport 53 -j ACCEPT
 
 ```
 
