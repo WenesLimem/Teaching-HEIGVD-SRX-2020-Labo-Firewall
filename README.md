@@ -546,7 +546,7 @@ root@Firewall:/# iptables -A FORWARD -i eth2 -p tcp --dport 80 -j ACCEPT
 root@Firewall:/# iptables -A FORWARD -o eth2 -p tcp --sport 80 -j ACCEPT
 
 ```
-![](Screens/https2.PNG)
+
 ---
 
 <ol type="a" start="7">
@@ -556,8 +556,8 @@ root@Firewall:/# iptables -A FORWARD -o eth2 -p tcp --sport 80 -j ACCEPT
 
 ---
 
-**LIVRABLE : capture d'écran.**
-
+**Capture d'écran.**
+![](Screens/https2.PNG)
 ---
 
 
