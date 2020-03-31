@@ -128,18 +128,23 @@ _Lors de la définition d'une zone, spécifier l'adresse du sous-réseau IP avec
 
 | Adresse IP source | Adresse IP destination | Type | Port src | Port dst | Action |
 | :---:             | :---:                  | :---:| :------: | :------: | :----: |
-|192.168.100.0/24   |172.17.0.2/32           | TCP  |    *     |     53   | ACCEPT |
-| ``                | ``                     | UDP  |    *     |     53   | ACCEPT |
-|  ``               |            *           | TCP  |    *     | 443      | ACCEPT |
-|     ``            |           *            | TCP  |   *      | 80       | ACCEPT |
-|  ``               |     *                  | TCP  |    *     |  8080    | ACCEPT |
-|   ``              |      172.17.0.2/32     | ICMP |   *      |     *    | ACCEPT |
-|       ``          |      192.168.200.0/24  | ICMP |     *    |   *      | ACCEPT |
-| 192.168.200.0/24  |     192.168.100.0/24   | ICMP |      *   |   *      | ACCEPT |
-| 192.168.200.3/32  |    192.168.100.2/32    | TCP  |  *       |    22    | ACCEPT |
-| 192.168.100.3/32  |   192.168.200.3/32     | TCP  |  *       | 22       | ACCEPT |
-| *                 | 192.168.200.3/32       | TCP  | *        | 80       | ACCEPT |
-| *                 |  *                     | *    |   *      | *        | DROP   |
+|192.168.100.0/24   | 172.17.0.2/32          | TCP  |    *     |    53    | ACCEPT |
+|192.168.100.0/24   | 172.17.0.2/32          | UDP  |    *     |    53    | ACCEPT |
+
+| 192.168.100.0/24  |    172.17.0.2/32       | ICMP |     *    |   *      | ACCEPT |
+| 192.168.100.0/24  |    192.168.200.0/24    | ICMP |     *    |   *      | ACCEPT |
+| 192.168.200.0/24  |    192.168.100.0/24    | ICMP |     *    |   *      | ACCEPT |
+
+| 192.168.100.0/24  |            *           | TCP  |    *     |  443     | ACCEPT |
+|        *          |   192.168.200.0/24     | TCP  |    *     |  80      | ACCEPT |
+| 192.168.100.0/24  |            *           | TCP  |    *     |  80      | ACCEPT |
+| 192.168.100.0/24  |            *           | TCP  |    *     |  8080    | ACCEPT |
+
+
+| 192.168.100.3/32  |    192.168.100.2/32    | TCP  |   *      |    22    | ACCEPT |
+| 192.168.100.3/32  |   192.168.200.3/32     | TCP  |   *      |    22    | ACCEPT |
+
+| *                 |  *                     |  *   |   *      |     *    | DROP   |
 
 
 # Installation de l’environnement virtualisé
@@ -234,7 +239,7 @@ ping 192.168.200.3
 ---
 
 **LIVRABLE : capture d'écran de votre tentative de ping.**  
-![](Screens/SRX_Capture_ping.png)
+
 ---
 
 En effet, la communication entre les clients dans le LAN et les serveurs dans la DMZ doit passer à travers le Firewall. Il faut donc définir le Firewall comme passerelle par défaut pour le client dans le LAN et le serveur dans la DMZ.
@@ -289,7 +294,7 @@ ping 192.168.100.3
 ---
 
 **LIVRABLE : capture d'écran de votre nouvelle tentative de ping.**
-![](Screens/SRX_Capture_ping2.png)
+
 ---
 
 La communication est maintenant possible entre les deux machines. Pourtant, si vous essayez de communiquer depuis le client ou le serveur vers l'Internet, ça ne devrait pas encore fonctionner sans une manipulation supplémentaire au niveau du firewall. Vous pouvez le vérifier avec un ping depuis le client ou le serveur vers une adresse Internet.
@@ -303,7 +308,7 @@ ping 8.8.8.8
 ---
 
 **LIVRABLE : capture d'écran de votre ping vers l'Internet.**
-![](Screens/SRX_Capture_ping3.png)
+
 ---
 
 ### Configuration réseau du firewall
